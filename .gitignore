@@ -21,3 +21,4 @@ graph_model/ranked_paths.json
 frontend/node_modules/
 frontend/build/
 *.jsonl
+data/* 

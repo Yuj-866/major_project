@@ -1,0 +1,42 @@
+{
+  "clean": 201,
+  "rejected": 0,
+  "dropped_runs": {
+    "run_0016_seed1035713554": 6
+  },
+  "runs": {
+    "train": [
+      "run_0001_seed1035713554",
+      "run_0002_seed1035713554",
+      "run_0003_seed1035713554",
+      "run_0004_seed1035713554",
+      "run_0005_seed1035713554",
+      "run_0006_seed1035713554",
+      "run_0007_seed1035713554",
+      "run_0008_seed1035713554",
+      "run_0009_seed1035713554",
+      "run_0010_seed1035713554"
+    ],
+    "val": [
+      "run_0011_seed1035713554",
+      "run_0012_seed1035713554"
+    ],
+    "test": [
+      "run_0013_seed1035713554",
+      "run_0014_seed1035713554",
+      "run_0015_seed1035713554"
+    ]
+  },
+  "sequences": {
+    "train": 90,
+    "val": 18,
+    "test": 27
+  },
+  "phase_x_label": {
+    "brute|HIGH": 20,
+    "idle|LOW": 120,
+    "exploit|HIGH": 22,
+    "exfil|MEDIUM": 19,
+    "recon|HIGH": 14
+  }
+}
