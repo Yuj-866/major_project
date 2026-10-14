@@ -166,10 +166,13 @@ def main():
     ap.add_argument("--shuffle", action="store_true",
                     help="Random run-level split instead of chronological.")
     ap.add_argument("--seed", type=int, default=42)
-    ap.add_argument("--drop-features", nargs="*", default=["anomaly_score"],
+    ap.add_argument("--drop-features", nargs="*", default=["anomaly_score", "time_of_day"],
                     help="Feature columns to remove from the model input. Default drops "
-                         "anomaly_score because it is computed from the same counts as the "
-                         "label (circular). Pass '--drop-features' with no names to keep all.")
+                         "anomaly_score (computed from the same counts the label logic uses) "
+                         "and time_of_day (an input to the simulator's HIGH-insider rule, and "
+                         "also reflects when THIS machine happened to run the simulator rather "
+                         "than attacker behavior) -- both are circular with the label if left "
+                         "in. Pass '--drop-features' with no names to keep all.")
     args = ap.parse_args()
 
     # ---- step 1: check / clean
@@ -211,7 +214,11 @@ def main():
     print(f"    input features: {len(kept_features)} kept, dropped {args.drop_features}")
 
     all_kept = [s for r in kept_runs.values() for s in r]
-    # label vs scheduled phase (label comes from real traffic, not the schedule)
+    # label is now GROUND TRUTH from simulator.py (what it was actually doing
+    # that window), not derived from scheduled_phase or traffic counters.
+    # scheduled_phase here is independent debug metadata, matched by
+    # snapshot_builder.py via timestamp overlap -- this crosstab is a sanity
+    # check that the two agree, not a definition of the label.
     xt = Counter((s.get("scheduled_phase") or "idle", s["label"]) for s in all_kept)
     print("    scheduled_phase x label (kept snapshots):")
     for ph in ["idle", "recon", "brute", "exploit", "exfil"]:

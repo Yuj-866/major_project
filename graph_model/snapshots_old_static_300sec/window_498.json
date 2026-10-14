@@ -1,0 +1,598 @@
+{
+  "window": 498,
+  "timestamp": "2026-10-07T07:38:26.859771+00:00",
+  "label": "HIGH",
+  "event_count": 302,
+  "max_failed_login": 0,
+  "run_id": "run_yuktha2005c_0003_seed1540073816",
+  "sim_window": 35,
+  "cycle_window": 9,
+  "scheduled_phase": "recon",
+  "nodes": [
+    "api-server",
+    "auth-service",
+    "payment-service",
+    "worker-service",
+    "user-docs",
+    "kyc-files",
+    "audit-logs",
+    "backups",
+    "db-access-role",
+    "lambda-exec-role",
+    "readonly-role",
+    "payment-role",
+    "admin-role",
+    "payment-lambda",
+    "kyc-lambda",
+    "notify-lambda",
+    "fintech-api-gateway",
+    "tx-queue",
+    "notify-queue",
+    "mysql-db",
+    "redis-cache",
+    "waf-firewall",
+    "load-balancer",
+    "cloudtrail-logs",
+    "kms-keys"
+  ],
+  "feature_names": [
+    "cvss",
+    "exposure",
+    "privilege",
+    "patch_status",
+    "auth_strength",
+    "asset_type",
+    "pagerank",
+    "betweenness",
+    "degree_centrality",
+    "in_degree",
+    "out_degree",
+    "anomaly_score"
+  ],
+  "feature_matrix": [
+    [
+      0.75,
+      1.0,
+      0.75,
+      0.0,
+      0.0,
+      1.0,
+      0.0761,
+      0.108696,
+      0.458333,
+      3.0,
+      8.0,
+      1.0
+    ],
+    [
+      0.8,
+      0.5,
+      0.8,
+      0.0,
+      0.0,
+      1.0,
+      0.023176,
+      0.021739,
+      0.125,
+      1.0,
+      2.0,
+      0.01
+    ],
+    [
+      0.9,
+      0.5,
+      0.9,
+      0.0,
+      0.0,
+      1.0,
+      0.023176,
+      0.050725,
+      0.25,
+      1.0,
+      5.0,
+      0.0
+    ],
+    [
+      0.75,
+      1.0,
+      0.6,
+      0.0,
+      0.0,
+      2.0,
+      0.023176,
+      0.028986,
+      0.125,
+      1.0,
+      2.0,
+      0.0
+    ],
+    [
+      0.55,
+      0.0,
+      0.5,
+      0.0,
+      0.0,
+      3.0,
+      0.054671,
+      0.0,
+      0.041667,
+      1.0,
+      0.0,
+      0.75
+    ],
+    [
+      0.55,
+      0.0,
+      0.5,
+      0.0,
+      0.0,
+      3.0,
+      0.026904,
+      0.009058,
+      0.083333,
+      1.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.55,
+      0.0,
+      0.5,
+      0.0,
+      0.0,
+      3.0,
+      0.023176,
+      0.0,
+      0.041667,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.55,
+      0.0,
+      0.5,
+      0.0,
+      0.0,
+      3.0,
+      0.026904,
+      0.0,
+      0.041667,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.45,
+      0.5,
+      0.25,
+      0.0,
+      0.0,
+      4.0,
+      0.032814,
+      0.016304,
+      0.083333,
+      1.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.45,
+      0.5,
+      0.25,
+      0.0,
+      0.0,
+      4.0,
+      0.022965,
+      0.0,
+      0.125,
+      0.0,
+      3.0,
+      0.0
+    ],
+    [
+      0.45,
+      0.5,
+      0.25,
+      0.0,
+      0.0,
+      4.0,
+      0.023176,
+      0.0,
+      0.041667,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.45,
+      0.5,
+      0.25,
+      0.0,
+      0.0,
+      4.0,
+      0.026904,
+      0.016304,
+      0.083333,
+      1.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.45,
+      0.5,
+      1.0,
+      0.0,
+      0.0,
+      4.0,
+      0.073726,
+      0.032609,
+      0.208333,
+      2.0,
+      3.0,
+      0.0
+    ],
+    [
+      0.65,
+      0.5,
+      0.6,
+      0.0,
+      0.0,
+      5.0,
+      0.057364,
+      0.0,
+      0.083333,
+      2.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.65,
+      0.5,
+      0.6,
+      0.0,
+      0.0,
+      5.0,
+      0.05234,
+      0.0,
+      0.083333,
+      2.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.65,
+      0.5,
+      0.6,
+      0.0,
+      0.0,
+      5.0,
+      0.057364,
+      0.0,
+      0.083333,
+      2.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.7,
+      1.0,
+      0.7,
+      0.0,
+      0.0,
+      6.0,
+      0.041021,
+      0.0,
+      0.083333,
+      1.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.5,
+      0.5,
+      0.5,
+      0.0,
+      0.0,
+      7.0,
+      0.032814,
+      0.009058,
+      0.083333,
+      1.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.5,
+      0.5,
+      0.5,
+      0.0,
+      0.0,
+      7.0,
+      0.032814,
+      0.009058,
+      0.083333,
+      1.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.95,
+      0.5,
+      0.9,
+      0.0,
+      0.0,
+      1.0,
+      0.089351,
+      0.0,
+      0.166667,
+      4.0,
+      0.0,
+      0.755
+    ],
+    [
+      0.6,
+      0.0,
+      0.5,
+      0.0,
+      0.0,
+      8.0,
+      0.026904,
+      0.0,
+      0.041667,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.4,
+      1.0,
+      0.5,
+      0.0,
+      0.0,
+      9.0,
+      0.022965,
+      0.0,
+      0.041667,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.65,
+      1.0,
+      0.5,
+      0.0,
+      0.0,
+      10.0,
+      0.042484,
+      0.039855,
+      0.125,
+      1.0,
+      2.0,
+      0.0
+    ],
+    [
+      0.3,
+      0.5,
+      0.5,
+      0.0,
+      0.0,
+      11.0,
+      0.043854,
+      0.0,
+      0.041667,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.55,
+      0.5,
+      0.5,
+      0.0,
+      0.0,
+      12.0,
+      0.043854,
+      0.0,
+      0.041667,
+      1.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "edges": [
+    {
+      "source": "api-server",
+      "target": "auth-service",
+      "weight": 1.0,
+      "type": "base"
+    },
+    {
+      "source": "api-server",
+      "target": "payment-service",
+      "weight": 1.0,
+      "type": "base"
+    },
+    {
+      "source": "api-server",
+      "target": "mysql-db",
+      "weight": 150.0,
+      "type": "dynamic_attack"
+    },
+    {
+      "source": "api-server",
+      "target": "user-docs",
+      "weight": 150.0,
+      "type": "dynamic_attack"
+    },
+    {
+      "source": "api-server",
+      "target": "audit-logs",
+      "weight": 1.0,
+      "type": "base"
+    },
+    {
+      "source": "api-server",
+      "target": "readonly-role",
+      "weight": 1.0,
+      "type": "base"
+    },
+    {
+      "source": "api-server",
+      "target": "worker-service",
+      "weight": 1.0,
+      "type": "base"
+    },
+    {
+      "source": "api-server",
+      "target": "api-server",
+      "weight": 1.0,
+      "type": "base"
+    },
+    {
+      "source": "auth-service",
+      "target": "mysql-db",
+      "weight": 1.0,
+      "type": "base"
+    },
+    {
+      "source": "auth-service",
+      "target": "db-access-role",
+      "weight": 1.0,
+      "type": "base"
+    },
+    {
+      "source": "payment-service",
+      "target": "mysql-db",
+      "weight": 1.0,
+      "type": "base"
+    },
+    {
+      "source": "payment-service",
+      "target": "redis-cache",
+      "weight": 1.0,
+      "type": "base"
+    },
+    {
+      "source": "payment-service",
+      "target": "kyc-files",
+      "weight": 1.0,
+      "type": "base"
+    },
+    {
+      "source": "payment-service",
+      "target": "backups",
+      "weight": 1.0,
+      "type": "base"
+    },
+    {
+      "source": "payment-service",
+      "target": "payment-role",
+      "weight": 1.0,
+      "type": "base"
+    },
+    {
+      "source": "worker-service",
+      "target": "tx-queue",
+      "weight": 1.0,
+      "type": "base"
+    },
+    {
+      "source": "worker-service",
+      "target": "notify-queue",
+      "weight": 1.0,
+      "type": "base"
+    },
+    {
+      "source": "kyc-files",
+      "target": "kyc-lambda",
+      "weight": 1.0,
+      "type": "base"
+    },
+    {
+      "source": "db-access-role",
+      "target": "admin-role",
+      "weight": 1.0,
+      "type": "base"
+    },
+    {
+      "source": "lambda-exec-role",
+      "target": "payment-lambda",
+      "weight": 1.0,
+      "type": "base"
+    },
+    {
+      "source": "lambda-exec-role",
+      "target": "kyc-lambda",
+      "weight": 1.0,
+      "type": "base"
+    },
+    {
+      "source": "lambda-exec-role",
+      "target": "notify-lambda",
+      "weight": 1.0,
+      "type": "base"
+    },
+    {
+      "source": "payment-role",
+      "target": "admin-role",
+      "weight": 1.0,
+      "type": "base"
+    },
+    {
+      "source": "admin-role",
+      "target": "kms-keys",
+      "weight": 1.0,
+      "type": "base"
+    },
+    {
+      "source": "admin-role",
+      "target": "cloudtrail-logs",
+      "weight": 1.0,
+      "type": "base"
+    },
+    {
+      "source": "admin-role",
+      "target": "mysql-db",
+      "weight": 1.0,
+      "type": "base"
+    },
+    {
+      "source": "fintech-api-gateway",
+      "target": "api-server",
+      "weight": 1.0,
+      "type": "base"
+    },
+    {
+      "source": "tx-queue",
+      "target": "payment-lambda",
+      "weight": 1.0,
+      "type": "base"
+    },
+    {
+      "source": "notify-queue",
+      "target": "notify-lambda",
+      "weight": 1.0,
+      "type": "base"
+    },
+    {
+      "source": "waf-firewall",
+      "target": "load-balancer",
+      "weight": 1.0,
+      "type": "base"
+    },
+    {
+      "source": "load-balancer",
+      "target": "fintech-api-gateway",
+      "weight": 1.0,
+      "type": "base"
+    },
+    {
+      "source": "load-balancer",
+      "target": "api-server",
+      "weight": 1.0,
+      "type": "base"
+    }
+  ]
+}
