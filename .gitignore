@@ -22,3 +22,7 @@ frontend/node_modules/
 frontend/build/
 *.jsonl
 data/* 
+# ML artifacts
+*.pt
+graph_model/checkpoints/
+graph_model/results/
