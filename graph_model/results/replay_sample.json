@@ -1,0 +1,1042 @@
+{
+  "meta": {
+    "model": {
+      "name": "node_risk_node_h0",
+      "version": "2026-10-18T22:43"
+    },
+    "seq_len": 3,
+    "horizon": 0,
+    "feature_names": [
+      "cvss",
+      "exposure",
+      "privilege",
+      "patch_status",
+      "auth_strength",
+      "asset_type",
+      "pagerank",
+      "betweenness",
+      "degree_centrality",
+      "in_degree",
+      "out_degree",
+      "in_strength",
+      "out_strength",
+      "new_conn"
+    ],
+    "node_order": [
+      "api-server",
+      "auth-service",
+      "payment-service",
+      "worker-service",
+      "user-docs",
+      "kyc-files",
+      "audit-logs",
+      "backups",
+      "db-access-role",
+      "lambda-exec-role",
+      "readonly-role",
+      "payment-role",
+      "admin-role",
+      "payment-lambda",
+      "kyc-lambda",
+      "notify-lambda",
+      "fintech-api-gateway",
+      "tx-queue",
+      "notify-queue",
+      "mysql-db",
+      "redis-cache",
+      "waf-firewall",
+      "load-balancer",
+      "cloudtrail-logs",
+      "kms-keys"
+    ],
+    "window_seconds": 30,
+    "labels": [
+      "LOW",
+      "MEDIUM",
+      "HIGH"
+    ]
+  },
+  "items": [
+    {
+      "window_end": "2026-10-14T01:42:03.442823+00:00",
+      "risk_class": "LOW",
+      "probabilities": {
+        "LOW": 0.909,
+        "MEDIUM": 0.059,
+        "HIGH": 0.032
+      },
+      "horizon": 0,
+      "node_risk": {
+        "api-server": 0.071,
+        "auth-service": 0.03,
+        "payment-service": 0.058,
+        "worker-service": 0.019,
+        "user-docs": 0.021,
+        "kyc-files": 0.091,
+        "audit-logs": 0.003,
+        "backups": 0.045,
+        "db-access-role": 0.038,
+        "lambda-exec-role": 0.021,
+        "readonly-role": 0.012,
+        "payment-role": 0.017,
+        "admin-role": 0.01,
+        "payment-lambda": 0.0,
+        "kyc-lambda": 0.0,
+        "notify-lambda": 0.0,
+        "fintech-api-gateway": 0.006,
+        "tx-queue": 0.043,
+        "notify-queue": 0.043,
+        "mysql-db": 0.001,
+        "redis-cache": 0.0,
+        "waf-firewall": 0.038,
+        "load-balancer": 0.029,
+        "cloudtrail-logs": 0.003,
+        "kms-keys": 0.001
+      },
+      "top_paths": [
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "kyc-files"
+          ],
+          "score": 0.073
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "backups"
+          ],
+          "score": 0.058
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "kyc-files",
+            "kyc-lambda"
+          ],
+          "score": 0.055
+        },
+        {
+          "nodes": [
+            "payment-service",
+            "kyc-files",
+            "kyc-lambda"
+          ],
+          "score": 0.05
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "payment-role"
+          ],
+          "score": 0.049
+        }
+      ],
+      "placeholder": [],
+      "heuristic": [
+        "top_paths"
+      ],
+      "model": {
+        "name": "node_risk_node_h0",
+        "version": "2026-10-18T22:43"
+      }
+    },
+    {
+      "window_end": "2026-10-14T01:42:34.637996+00:00",
+      "risk_class": "LOW",
+      "probabilities": {
+        "LOW": 0.909,
+        "MEDIUM": 0.059,
+        "HIGH": 0.032
+      },
+      "horizon": 0,
+      "node_risk": {
+        "api-server": 0.071,
+        "auth-service": 0.03,
+        "payment-service": 0.058,
+        "worker-service": 0.019,
+        "user-docs": 0.021,
+        "kyc-files": 0.091,
+        "audit-logs": 0.003,
+        "backups": 0.045,
+        "db-access-role": 0.038,
+        "lambda-exec-role": 0.021,
+        "readonly-role": 0.012,
+        "payment-role": 0.017,
+        "admin-role": 0.01,
+        "payment-lambda": 0.0,
+        "kyc-lambda": 0.0,
+        "notify-lambda": 0.0,
+        "fintech-api-gateway": 0.006,
+        "tx-queue": 0.043,
+        "notify-queue": 0.043,
+        "mysql-db": 0.001,
+        "redis-cache": 0.0,
+        "waf-firewall": 0.038,
+        "load-balancer": 0.029,
+        "cloudtrail-logs": 0.003,
+        "kms-keys": 0.001
+      },
+      "top_paths": [
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "kyc-files"
+          ],
+          "score": 0.073
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "backups"
+          ],
+          "score": 0.058
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "kyc-files",
+            "kyc-lambda"
+          ],
+          "score": 0.055
+        },
+        {
+          "nodes": [
+            "payment-service",
+            "kyc-files",
+            "kyc-lambda"
+          ],
+          "score": 0.05
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "payment-role"
+          ],
+          "score": 0.049
+        }
+      ],
+      "placeholder": [],
+      "heuristic": [
+        "top_paths"
+      ],
+      "model": {
+        "name": "node_risk_node_h0",
+        "version": "2026-10-18T22:43"
+      }
+    },
+    {
+      "window_end": "2026-10-14T01:43:04.671010+00:00",
+      "risk_class": "LOW",
+      "probabilities": {
+        "LOW": 0.909,
+        "MEDIUM": 0.059,
+        "HIGH": 0.032
+      },
+      "horizon": 0,
+      "node_risk": {
+        "api-server": 0.071,
+        "auth-service": 0.03,
+        "payment-service": 0.058,
+        "worker-service": 0.019,
+        "user-docs": 0.021,
+        "kyc-files": 0.091,
+        "audit-logs": 0.003,
+        "backups": 0.045,
+        "db-access-role": 0.038,
+        "lambda-exec-role": 0.021,
+        "readonly-role": 0.012,
+        "payment-role": 0.017,
+        "admin-role": 0.01,
+        "payment-lambda": 0.0,
+        "kyc-lambda": 0.0,
+        "notify-lambda": 0.0,
+        "fintech-api-gateway": 0.006,
+        "tx-queue": 0.043,
+        "notify-queue": 0.043,
+        "mysql-db": 0.001,
+        "redis-cache": 0.0,
+        "waf-firewall": 0.038,
+        "load-balancer": 0.029,
+        "cloudtrail-logs": 0.003,
+        "kms-keys": 0.001
+      },
+      "top_paths": [
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "kyc-files"
+          ],
+          "score": 0.073
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "backups"
+          ],
+          "score": 0.058
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "kyc-files",
+            "kyc-lambda"
+          ],
+          "score": 0.055
+        },
+        {
+          "nodes": [
+            "payment-service",
+            "kyc-files",
+            "kyc-lambda"
+          ],
+          "score": 0.05
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "payment-role"
+          ],
+          "score": 0.049
+        }
+      ],
+      "placeholder": [],
+      "heuristic": [
+        "top_paths"
+      ],
+      "model": {
+        "name": "node_risk_node_h0",
+        "version": "2026-10-18T22:43"
+      }
+    },
+    {
+      "window_end": "2026-10-14T01:43:34.703246+00:00",
+      "risk_class": "LOW",
+      "probabilities": {
+        "LOW": 0.909,
+        "MEDIUM": 0.059,
+        "HIGH": 0.032
+      },
+      "horizon": 0,
+      "node_risk": {
+        "api-server": 0.071,
+        "auth-service": 0.03,
+        "payment-service": 0.058,
+        "worker-service": 0.019,
+        "user-docs": 0.021,
+        "kyc-files": 0.091,
+        "audit-logs": 0.003,
+        "backups": 0.045,
+        "db-access-role": 0.038,
+        "lambda-exec-role": 0.021,
+        "readonly-role": 0.012,
+        "payment-role": 0.017,
+        "admin-role": 0.01,
+        "payment-lambda": 0.0,
+        "kyc-lambda": 0.0,
+        "notify-lambda": 0.0,
+        "fintech-api-gateway": 0.006,
+        "tx-queue": 0.043,
+        "notify-queue": 0.043,
+        "mysql-db": 0.001,
+        "redis-cache": 0.0,
+        "waf-firewall": 0.038,
+        "load-balancer": 0.029,
+        "cloudtrail-logs": 0.003,
+        "kms-keys": 0.001
+      },
+      "top_paths": [
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "kyc-files"
+          ],
+          "score": 0.073
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "backups"
+          ],
+          "score": 0.058
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "kyc-files",
+            "kyc-lambda"
+          ],
+          "score": 0.055
+        },
+        {
+          "nodes": [
+            "payment-service",
+            "kyc-files",
+            "kyc-lambda"
+          ],
+          "score": 0.05
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "payment-role"
+          ],
+          "score": 0.049
+        }
+      ],
+      "placeholder": [],
+      "heuristic": [
+        "top_paths"
+      ],
+      "model": {
+        "name": "node_risk_node_h0",
+        "version": "2026-10-18T22:43"
+      }
+    },
+    {
+      "window_end": "2026-10-14T01:44:04.738292+00:00",
+      "risk_class": "LOW",
+      "probabilities": {
+        "LOW": 0.802,
+        "MEDIUM": 0.127,
+        "HIGH": 0.071
+      },
+      "horizon": 0,
+      "node_risk": {
+        "api-server": 0.121,
+        "auth-service": 0.037,
+        "payment-service": 0.044,
+        "worker-service": 0.007,
+        "user-docs": 0.198,
+        "kyc-files": 0.052,
+        "audit-logs": 0.006,
+        "backups": 0.035,
+        "db-access-role": 0.015,
+        "lambda-exec-role": 0.009,
+        "readonly-role": 0.005,
+        "payment-role": 0.007,
+        "admin-role": 0.005,
+        "payment-lambda": 0.0,
+        "kyc-lambda": 0.0,
+        "notify-lambda": 0.0,
+        "fintech-api-gateway": 0.002,
+        "tx-queue": 0.017,
+        "notify-queue": 0.017,
+        "mysql-db": 0.007,
+        "redis-cache": 0.0,
+        "waf-firewall": 0.016,
+        "load-balancer": 0.012,
+        "cloudtrail-logs": 0.001,
+        "kms-keys": 0.0
+      },
+      "top_paths": [
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "kyc-files"
+          ],
+          "score": 0.072
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "backups"
+          ],
+          "score": 0.067
+        },
+        {
+          "nodes": [
+            "api-server",
+            "auth-service",
+            "db-access-role"
+          ],
+          "score": 0.058
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "mysql-db"
+          ],
+          "score": 0.057
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "payment-role"
+          ],
+          "score": 0.057
+        }
+      ],
+      "placeholder": [],
+      "heuristic": [
+        "top_paths"
+      ],
+      "model": {
+        "name": "node_risk_node_h0",
+        "version": "2026-10-18T22:43"
+      }
+    },
+    {
+      "window_end": "2026-10-14T01:44:34.768396+00:00",
+      "risk_class": "MEDIUM",
+      "probabilities": {
+        "LOW": 0.114,
+        "MEDIUM": 0.553,
+        "HIGH": 0.333
+      },
+      "horizon": 0,
+      "node_risk": {
+        "api-server": 0.279,
+        "auth-service": 0.087,
+        "payment-service": 0.094,
+        "worker-service": 0.009,
+        "user-docs": 0.363,
+        "kyc-files": 0.085,
+        "audit-logs": 0.037,
+        "backups": 0.091,
+        "db-access-role": 0.019,
+        "lambda-exec-role": 0.012,
+        "readonly-role": 0.005,
+        "payment-role": 0.008,
+        "admin-role": 0.01,
+        "payment-lambda": 0.0,
+        "kyc-lambda": 0.0,
+        "notify-lambda": 0.0,
+        "fintech-api-gateway": 0.003,
+        "tx-queue": 0.023,
+        "notify-queue": 0.023,
+        "mysql-db": 0.886,
+        "redis-cache": 0.0,
+        "waf-firewall": 0.022,
+        "load-balancer": 0.017,
+        "cloudtrail-logs": 0.002,
+        "kms-keys": 0.0
+      },
+      "top_paths": [
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "mysql-db"
+          ],
+          "score": 0.42
+        },
+        {
+          "nodes": [
+            "api-server",
+            "auth-service",
+            "mysql-db"
+          ],
+          "score": 0.417
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "backups"
+          ],
+          "score": 0.155
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "kyc-files"
+          ],
+          "score": 0.153
+        },
+        {
+          "nodes": [
+            "api-server",
+            "auth-service",
+            "db-access-role"
+          ],
+          "score": 0.128
+        }
+      ],
+      "placeholder": [],
+      "heuristic": [
+        "top_paths"
+      ],
+      "model": {
+        "name": "node_risk_node_h0",
+        "version": "2026-10-18T22:43"
+      }
+    },
+    {
+      "window_end": "2026-10-14T01:45:04.807534+00:00",
+      "risk_class": "MEDIUM",
+      "probabilities": {
+        "LOW": 0.022,
+        "MEDIUM": 0.597,
+        "HIGH": 0.381
+      },
+      "horizon": 0,
+      "node_risk": {
+        "api-server": 0.071,
+        "auth-service": 0.161,
+        "payment-service": 0.013,
+        "worker-service": 0.001,
+        "user-docs": 0.023,
+        "kyc-files": 0.012,
+        "audit-logs": 0.013,
+        "backups": 0.016,
+        "db-access-role": 0.002,
+        "lambda-exec-role": 0.002,
+        "readonly-role": 0.001,
+        "payment-role": 0.001,
+        "admin-role": 0.003,
+        "payment-lambda": 0.0,
+        "kyc-lambda": 0.0,
+        "notify-lambda": 0.0,
+        "fintech-api-gateway": 0.0,
+        "tx-queue": 0.003,
+        "notify-queue": 0.003,
+        "mysql-db": 0.978,
+        "redis-cache": 0.0,
+        "waf-firewall": 0.003,
+        "load-balancer": 0.002,
+        "cloudtrail-logs": 0.0,
+        "kms-keys": 0.0
+      },
+      "top_paths": [
+        {
+          "nodes": [
+            "api-server",
+            "auth-service",
+            "mysql-db"
+          ],
+          "score": 0.403
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "mysql-db"
+          ],
+          "score": 0.354
+        },
+        {
+          "nodes": [
+            "auth-service",
+            "db-access-role",
+            "admin-role",
+            "mysql-db"
+          ],
+          "score": 0.286
+        },
+        {
+          "nodes": [
+            "api-server",
+            "auth-service",
+            "db-access-role"
+          ],
+          "score": 0.078
+        },
+        {
+          "nodes": [
+            "api-server",
+            "auth-service",
+            "db-access-role",
+            "admin-role"
+          ],
+          "score": 0.059
+        }
+      ],
+      "placeholder": [],
+      "heuristic": [
+        "top_paths"
+      ],
+      "model": {
+        "name": "node_risk_node_h0",
+        "version": "2026-10-18T22:43"
+      }
+    },
+    {
+      "window_end": "2026-10-14T01:45:34.844045+00:00",
+      "risk_class": "MEDIUM",
+      "probabilities": {
+        "LOW": 0.02,
+        "MEDIUM": 0.599,
+        "HIGH": 0.381
+      },
+      "horizon": 0,
+      "node_risk": {
+        "api-server": 0.177,
+        "auth-service": 0.415,
+        "payment-service": 0.025,
+        "worker-service": 0.002,
+        "user-docs": 0.109,
+        "kyc-files": 0.027,
+        "audit-logs": 0.041,
+        "backups": 0.037,
+        "db-access-role": 0.007,
+        "lambda-exec-role": 0.004,
+        "readonly-role": 0.001,
+        "payment-role": 0.002,
+        "admin-role": 0.009,
+        "payment-lambda": 0.0,
+        "kyc-lambda": 0.0,
+        "notify-lambda": 0.0,
+        "fintech-api-gateway": 0.001,
+        "tx-queue": 0.006,
+        "notify-queue": 0.006,
+        "mysql-db": 0.98,
+        "redis-cache": 0.0,
+        "waf-firewall": 0.007,
+        "load-balancer": 0.005,
+        "cloudtrail-logs": 0.001,
+        "kms-keys": 0.0
+      },
+      "top_paths": [
+        {
+          "nodes": [
+            "api-server",
+            "auth-service",
+            "mysql-db"
+          ],
+          "score": 0.524
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "mysql-db"
+          ],
+          "score": 0.394
+        },
+        {
+          "nodes": [
+            "auth-service",
+            "db-access-role",
+            "admin-role",
+            "mysql-db"
+          ],
+          "score": 0.353
+        },
+        {
+          "nodes": [
+            "api-server",
+            "auth-service",
+            "db-access-role"
+          ],
+          "score": 0.199
+        },
+        {
+          "nodes": [
+            "api-server",
+            "auth-service",
+            "db-access-role",
+            "admin-role"
+          ],
+          "score": 0.152
+        }
+      ],
+      "placeholder": [],
+      "heuristic": [
+        "top_paths"
+      ],
+      "model": {
+        "name": "node_risk_node_h0",
+        "version": "2026-10-18T22:43"
+      }
+    },
+    {
+      "window_end": "2026-10-14T01:46:04.876850+00:00",
+      "risk_class": "HIGH",
+      "probabilities": {
+        "LOW": 0.005,
+        "MEDIUM": 0.471,
+        "HIGH": 0.524
+      },
+      "horizon": 0,
+      "node_risk": {
+        "api-server": 0.004,
+        "auth-service": 0.067,
+        "payment-service": 0.001,
+        "worker-service": 0.0,
+        "user-docs": 0.002,
+        "kyc-files": 0.001,
+        "audit-logs": 0.001,
+        "backups": 0.001,
+        "db-access-role": 0.001,
+        "lambda-exec-role": 0.0,
+        "readonly-role": 0.0,
+        "payment-role": 0.0,
+        "admin-role": 0.0,
+        "payment-lambda": 0.0,
+        "kyc-lambda": 0.0,
+        "notify-lambda": 0.0,
+        "fintech-api-gateway": 0.0,
+        "tx-queue": 0.0,
+        "notify-queue": 0.0,
+        "mysql-db": 0.995,
+        "redis-cache": 0.0,
+        "waf-firewall": 0.0,
+        "load-balancer": 0.0,
+        "cloudtrail-logs": 0.0,
+        "kms-keys": 0.0
+      },
+      "top_paths": [
+        {
+          "nodes": [
+            "api-server",
+            "auth-service",
+            "mysql-db"
+          ],
+          "score": 0.355
+        },
+        {
+          "nodes": [
+            "auth-service",
+            "mysql-db",
+            "notify-queue"
+          ],
+          "score": 0.354
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "mysql-db"
+          ],
+          "score": 0.333
+        },
+        {
+          "nodes": [
+            "api-server",
+            "mysql-db",
+            "notify-queue"
+          ],
+          "score": 0.333
+        },
+        {
+          "nodes": [
+            "mysql-db",
+            "notify-queue",
+            "notify-lambda"
+          ],
+          "score": 0.332
+        }
+      ],
+      "placeholder": [],
+      "heuristic": [
+        "top_paths"
+      ],
+      "model": {
+        "name": "node_risk_node_h0",
+        "version": "2026-10-18T22:43"
+      }
+    },
+    {
+      "window_end": "2026-10-14T01:46:34.913556+00:00",
+      "risk_class": "HIGH",
+      "probabilities": {
+        "LOW": 0.008,
+        "MEDIUM": 0.491,
+        "HIGH": 0.501
+      },
+      "horizon": 0,
+      "node_risk": {
+        "api-server": 0.022,
+        "auth-service": 0.024,
+        "payment-service": 0.013,
+        "worker-service": 0.002,
+        "user-docs": 0.026,
+        "kyc-files": 0.016,
+        "audit-logs": 0.006,
+        "backups": 0.02,
+        "db-access-role": 0.015,
+        "lambda-exec-role": 0.004,
+        "readonly-role": 0.001,
+        "payment-role": 0.002,
+        "admin-role": 0.006,
+        "payment-lambda": 0.0,
+        "kyc-lambda": 0.0,
+        "notify-lambda": 0.001,
+        "fintech-api-gateway": 0.001,
+        "tx-queue": 0.006,
+        "notify-queue": 0.061,
+        "mysql-db": 0.992,
+        "redis-cache": 0.0,
+        "waf-firewall": 0.008,
+        "load-balancer": 0.005,
+        "cloudtrail-logs": 0.001,
+        "kms-keys": 0.0
+      },
+      "top_paths": [
+        {
+          "nodes": [
+            "mysql-db",
+            "notify-queue",
+            "notify-lambda"
+          ],
+          "score": 0.351
+        }
+      ],
+      "placeholder": [],
+      "heuristic": [
+        "top_paths"
+      ],
+      "model": {
+        "name": "node_risk_node_h0",
+        "version": "2026-10-18T22:43"
+      }
+    },
+    {
+      "window_end": "2026-10-14T01:47:04.928802+00:00",
+      "risk_class": "HIGH",
+      "probabilities": {
+        "LOW": 0.009,
+        "MEDIUM": 0.398,
+        "HIGH": 0.593
+      },
+      "horizon": 0,
+      "node_risk": {
+        "api-server": 0.001,
+        "auth-service": 0.0,
+        "payment-service": 0.001,
+        "worker-service": 0.001,
+        "user-docs": 0.002,
+        "kyc-files": 0.002,
+        "audit-logs": 0.0,
+        "backups": 0.002,
+        "db-access-role": 0.001,
+        "lambda-exec-role": 0.001,
+        "readonly-role": 0.0,
+        "payment-role": 0.0,
+        "admin-role": 0.0,
+        "payment-lambda": 0.0,
+        "kyc-lambda": 0.0,
+        "notify-lambda": 0.0,
+        "fintech-api-gateway": 0.0,
+        "tx-queue": 0.001,
+        "notify-queue": 0.991,
+        "mysql-db": 0.0,
+        "redis-cache": 0.0,
+        "waf-firewall": 0.001,
+        "load-balancer": 0.001,
+        "cloudtrail-logs": 0.0,
+        "kms-keys": 0.0
+      },
+      "top_paths": [],
+      "placeholder": [],
+      "heuristic": [
+        "top_paths"
+      ],
+      "model": {
+        "name": "node_risk_node_h0",
+        "version": "2026-10-18T22:43"
+      }
+    },
+    {
+      "window_end": "2026-10-14T01:47:34.941619+00:00",
+      "risk_class": "HIGH",
+      "probabilities": {
+        "LOW": 0.017,
+        "MEDIUM": 0.388,
+        "HIGH": 0.595
+      },
+      "horizon": 0,
+      "node_risk": {
+        "api-server": 0.003,
+        "auth-service": 0.001,
+        "payment-service": 0.002,
+        "worker-service": 0.001,
+        "user-docs": 0.001,
+        "kyc-files": 0.004,
+        "audit-logs": 0.0,
+        "backups": 0.003,
+        "db-access-role": 0.002,
+        "lambda-exec-role": 0.001,
+        "readonly-role": 0.001,
+        "payment-role": 0.001,
+        "admin-role": 0.001,
+        "payment-lambda": 0.0,
+        "kyc-lambda": 0.0,
+        "notify-lambda": 0.0,
+        "fintech-api-gateway": 0.0,
+        "tx-queue": 0.002,
+        "notify-queue": 0.983,
+        "mysql-db": 0.0,
+        "redis-cache": 0.0,
+        "waf-firewall": 0.002,
+        "load-balancer": 0.001,
+        "cloudtrail-logs": 0.0,
+        "kms-keys": 0.0
+      },
+      "top_paths": [
+        {
+          "nodes": [
+            "api-server",
+            "worker-service",
+            "notify-queue"
+          ],
+          "score": 0.329
+        },
+        {
+          "nodes": [
+            "api-server",
+            "worker-service",
+            "notify-queue",
+            "notify-lambda"
+          ],
+          "score": 0.247
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "kyc-files"
+          ],
+          "score": 0.003
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "backups"
+          ],
+          "score": 0.002
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "kyc-files",
+            "kyc-lambda"
+          ],
+          "score": 0.002
+        }
+      ],
+      "placeholder": [],
+      "heuristic": [
+        "top_paths"
+      ],
+      "model": {
+        "name": "node_risk_node_h0",
+        "version": "2026-10-18T22:43"
+      }
+    }
+  ]
+}
