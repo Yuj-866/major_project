@@ -125,9 +125,41 @@ def split_runs(runs, rows, seed, frac=0.15, min_per_class=6, tries=5000):
     return best
 
 
+def boundary_candidates(rows):
+    """Windows that look like the LAST tick of an episode but carry the NEXT run_id
+    (simulator logs attacker.run_id after step() rotated it). Signature: first window
+    of a run is non-idle and the next window of that run is idle."""
+    first = {}
+    for i, s in enumerate(rows):
+        first.setdefault(s["run_id"], i)
+    cands = []
+    for rid, i in first.items():
+        if i == 0 or rows[i - 1]["run_id"] == rid:
+            continue
+        nxt = rows[i + 1] if i + 1 < len(rows) and rows[i + 1]["run_id"] == rid else None
+        if rows[i].get("scheduled_phase") != "idle" and nxt is not None and nxt.get("scheduled_phase") == "idle":
+            cands.append(i)
+    return cands, len(first)
+
+
+def chrono_split(runs, rows, min_per_class):
+    """Rule 2: earliest 70% of runs = train, next 15% = val, latest 15% = test."""
+    rids = list(runs)                      # insertion order == chronological order
+    n = len(rids)
+    a, b = int(n * 0.70), int(n * 0.85)
+    train, val, test = rids[:a], rids[a:b], rids[b:]
+    for name, part in (("val", val), ("test", test)):
+        c = Counter(rows[i]["label"] for r in part for i in runs[r])
+        if min(c[l] for l in LABELS) < min_per_class:
+            counts = {l: c[l] for l in LABELS}
+            print("[WARN] chronological %s split has few windows of some class: %s "
+                  "-> metrics for that class will be unstable" % (name, counts))
+    return train, val, test
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--snap-dirs", nargs="+", default=[str(BASE_DIR / "graph_model" / "snapshots")])
+    ap.add_argument("--snap-dirs", nargs="+", default=[str(BASE_DIR / "graph_model" / "snapshots" / "snapshots_dynamic")])
     ap.add_argument("--out", default=str(BASE_DIR / "graph_model" / "dataset_dyn.pt"))
     ap.add_argument("--seq-len", type=int, default=5)
     ap.add_argument("--horizon", type=int, default=0, help="0 = current window, 1 = next window")
@@ -138,12 +170,26 @@ def main():
     ap.add_argument("--min-events", type=int, default=1)
     ap.add_argument("--min-per-class", type=int, default=6)
     ap.add_argument("--seed", type=int, default=42)
+    ap.add_argument("--split-mode", choices=["shuffle", "chrono"], default="shuffle",
+                    help="shuffle = seeded random run-level split; chrono = earliest runs train, latest test")
+    ap.add_argument("--fix-run-boundary", action="store_true",
+                    help="move each episode's last tick back to its own run_id")
     args = ap.parse_args()
 
     rows, dropped = load_windows(args.snap_dirs, args.min_events)
     print(f"Loaded {len(rows)} usable windows; dropped: {dict(dropped)}")
     if len(rows) < 100:
         raise SystemExit("Too few windows.")
+
+    cands, n_runs0 = boundary_candidates(rows)
+    print(f"Run-boundary check: {len(cands)} of {n_runs0} runs start with a non-idle window "
+          f"followed by idle (episode's last tick logged under the next run_id)")
+    if args.fix_run_boundary:
+        for i in cands:
+            rows[i]["run_id"] = rows[i - 1]["run_id"]
+        print(f"  -> fixed: moved {len(cands)} windows back to their own run")
+    elif cands:
+        print("  -> not fixed (use --fix-run-boundary to move them back)")
 
     keep_names = [f for f in FEATURE_NAMES if f not in args.drop_features]
     keep_idx = [FEATURE_NAMES.index(f) for f in keep_names]
@@ -169,7 +215,11 @@ def main():
 
     idx, tgt, seq_run, runs = make_sequences(rows, args.seq_len, args.horizon)
     print(f"\n{len(runs)} runs, {len(idx)} sequences (seq_len={args.seq_len}, horizon={args.horizon})")
-    train_r, val_r, test_r = split_runs(runs, rows, args.seed, min_per_class=args.min_per_class)
+    if args.split_mode == "chrono":
+        train_r, val_r, test_r = chrono_split(runs, rows, args.min_per_class)
+    else:
+        train_r, val_r, test_r = split_runs(runs, rows, args.seed, min_per_class=args.min_per_class)
+    print(f"split mode: {args.split_mode}")
     which = {r: "train" for r in train_r}
     which.update({r: "val" for r in val_r})
     which.update({r: "test" for r in test_r})

@@ -10,7 +10,7 @@ feature_store/snapshots/history/*.json
 
 # local generated / large - do not push
 cloud_simulation/logs/
-graph_model/snapshots/
+graph_model/snapshots/*
 ml_model/dgraph_windows/
 ml_model/paysim_windows/
 ml_model/*.csv
@@ -26,3 +26,4 @@ data/*
 *.pt
 graph_model/checkpoints/
 graph_model/results/
+!graph_model/snapshots/snapshots_dynamic/
