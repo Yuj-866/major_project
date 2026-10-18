@@ -1,0 +1,991 @@
+{
+  "top_paths_method": "heuristic: mean node risk along directed paths from the 3 riskiest nodes (not validated)",
+  "items": [
+    {
+      "run_id": "run_dyn_dyn_seed1496771736_ep0011",
+      "phase": "brute",
+      "window_label": "HIGH",
+      "true_compromised": "redis-cache",
+      "risk_class": "HIGH",
+      "probabilities": {
+        "LOW": 0.011,
+        "MEDIUM": 0.384,
+        "HIGH": 0.605
+      },
+      "node_risk": {
+        "api-server": 0.004,
+        "auth-service": 0.005,
+        "payment-service": 0.01,
+        "worker-service": 0.001,
+        "user-docs": 0.002,
+        "kyc-files": 0.009,
+        "audit-logs": 0.004,
+        "backups": 0.013,
+        "db-access-role": 0.004,
+        "lambda-exec-role": 0.002,
+        "readonly-role": 0.0,
+        "payment-role": 0.001,
+        "admin-role": 0.002,
+        "payment-lambda": 0.0,
+        "kyc-lambda": 0.0,
+        "notify-lambda": 0.0,
+        "fintech-api-gateway": 0.0,
+        "tx-queue": 0.003,
+        "notify-queue": 0.003,
+        "mysql-db": 0.003,
+        "redis-cache": 0.989,
+        "waf-firewall": 0.004,
+        "load-balancer": 0.014,
+        "cloudtrail-logs": 0.0,
+        "kms-keys": 0.0
+      },
+      "top_paths": [
+        {
+          "nodes": [
+            "redis-cache",
+            "load-balancer",
+            "api-server"
+          ],
+          "score": 0.336
+        },
+        {
+          "nodes": [
+            "redis-cache",
+            "load-balancer",
+            "fintech-api-gateway"
+          ],
+          "score": 0.334
+        },
+        {
+          "nodes": [
+            "redis-cache",
+            "load-balancer",
+            "api-server",
+            "payment-service"
+          ],
+          "score": 0.254
+        },
+        {
+          "nodes": [
+            "load-balancer",
+            "api-server",
+            "payment-service",
+            "redis-cache"
+          ],
+          "score": 0.254
+        },
+        {
+          "nodes": [
+            "redis-cache",
+            "load-balancer",
+            "api-server",
+            "auth-service"
+          ],
+          "score": 0.253
+        }
+      ]
+    },
+    {
+      "run_id": "run_dyn_dyn_seed1496771736_ep0011",
+      "phase": "exfil",
+      "window_label": "HIGH",
+      "true_compromised": "load-balancer",
+      "risk_class": "HIGH",
+      "probabilities": {
+        "LOW": 0.005,
+        "MEDIUM": 0.312,
+        "HIGH": 0.683
+      },
+      "node_risk": {
+        "api-server": 0.015,
+        "auth-service": 0.002,
+        "payment-service": 0.002,
+        "worker-service": 0.0,
+        "user-docs": 0.0,
+        "kyc-files": 0.0,
+        "audit-logs": 0.0,
+        "backups": 0.008,
+        "db-access-role": 0.0,
+        "lambda-exec-role": 0.0,
+        "readonly-role": 0.0,
+        "payment-role": 0.0,
+        "admin-role": 0.0,
+        "payment-lambda": 0.0,
+        "kyc-lambda": 0.0,
+        "notify-lambda": 0.0,
+        "fintech-api-gateway": 0.017,
+        "tx-queue": 0.0,
+        "notify-queue": 0.0,
+        "mysql-db": 0.0,
+        "redis-cache": 0.0,
+        "waf-firewall": 0.0,
+        "load-balancer": 0.995,
+        "cloudtrail-logs": 0.0,
+        "kms-keys": 0.0
+      },
+      "top_paths": [
+        {
+          "nodes": [
+            "load-balancer",
+            "fintech-api-gateway",
+            "api-server"
+          ],
+          "score": 0.342
+        },
+        {
+          "nodes": [
+            "load-balancer",
+            "api-server",
+            "auth-service"
+          ],
+          "score": 0.337
+        },
+        {
+          "nodes": [
+            "load-balancer",
+            "api-server",
+            "payment-service"
+          ],
+          "score": 0.337
+        },
+        {
+          "nodes": [
+            "load-balancer",
+            "api-server",
+            "user-docs"
+          ],
+          "score": 0.337
+        },
+        {
+          "nodes": [
+            "load-balancer",
+            "api-server",
+            "worker-service"
+          ],
+          "score": 0.337
+        }
+      ]
+    },
+    {
+      "run_id": "run_dyn_dyn_seed1496771736_ep0012",
+      "phase": "exploit",
+      "window_label": "MEDIUM",
+      "true_compromised": "readonly-role",
+      "risk_class": "HIGH",
+      "probabilities": {
+        "LOW": 0.003,
+        "MEDIUM": 0.328,
+        "HIGH": 0.669
+      },
+      "node_risk": {
+        "api-server": 0.025,
+        "auth-service": 0.004,
+        "payment-service": 0.005,
+        "worker-service": 0.002,
+        "user-docs": 0.085,
+        "kyc-files": 0.01,
+        "audit-logs": 0.001,
+        "backups": 0.006,
+        "db-access-role": 0.004,
+        "lambda-exec-role": 0.002,
+        "readonly-role": 0.997,
+        "payment-role": 0.002,
+        "admin-role": 0.002,
+        "payment-lambda": 0.0,
+        "kyc-lambda": 0.0,
+        "notify-lambda": 0.0,
+        "fintech-api-gateway": 0.001,
+        "tx-queue": 0.005,
+        "notify-queue": 0.005,
+        "mysql-db": 0.003,
+        "redis-cache": 0.0,
+        "waf-firewall": 0.005,
+        "load-balancer": 0.003,
+        "cloudtrail-logs": 0.0,
+        "kms-keys": 0.0
+      },
+      "top_paths": [
+        {
+          "nodes": [
+            "api-server",
+            "readonly-role",
+            "user-docs"
+          ],
+          "score": 0.369
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "kyc-files"
+          ],
+          "score": 0.014
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "backups"
+          ],
+          "score": 0.012
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "mysql-db"
+          ],
+          "score": 0.011
+        },
+        {
+          "nodes": [
+            "api-server",
+            "auth-service",
+            "db-access-role"
+          ],
+          "score": 0.011
+        }
+      ]
+    },
+    {
+      "run_id": "run_dyn_dyn_seed1496771736_ep0012",
+      "phase": "exploit",
+      "window_label": "MEDIUM",
+      "true_compromised": "payment-role",
+      "risk_class": "HIGH",
+      "probabilities": {
+        "LOW": 0.004,
+        "MEDIUM": 0.315,
+        "HIGH": 0.681
+      },
+      "node_risk": {
+        "api-server": 0.0,
+        "auth-service": 0.0,
+        "payment-service": 0.001,
+        "worker-service": 0.0,
+        "user-docs": 0.004,
+        "kyc-files": 0.0,
+        "audit-logs": 0.0,
+        "backups": 0.0,
+        "db-access-role": 0.0,
+        "lambda-exec-role": 0.0,
+        "readonly-role": 0.0,
+        "payment-role": 0.996,
+        "admin-role": 0.001,
+        "payment-lambda": 0.0,
+        "kyc-lambda": 0.0,
+        "notify-lambda": 0.0,
+        "fintech-api-gateway": 0.0,
+        "tx-queue": 0.0,
+        "notify-queue": 0.0,
+        "mysql-db": 0.0,
+        "redis-cache": 0.0,
+        "waf-firewall": 0.0,
+        "load-balancer": 0.0,
+        "cloudtrail-logs": 0.0,
+        "kms-keys": 0.0
+      },
+      "top_paths": [
+        {
+          "nodes": [
+            "payment-service",
+            "payment-role",
+            "admin-role"
+          ],
+          "score": 0.332
+        },
+        {
+          "nodes": [
+            "payment-role",
+            "admin-role",
+            "cloudtrail-logs"
+          ],
+          "score": 0.332
+        },
+        {
+          "nodes": [
+            "payment-role",
+            "admin-role",
+            "kms-keys"
+          ],
+          "score": 0.332
+        },
+        {
+          "nodes": [
+            "payment-role",
+            "admin-role",
+            "mysql-db"
+          ],
+          "score": 0.332
+        },
+        {
+          "nodes": [
+            "payment-service",
+            "payment-role",
+            "admin-role",
+            "cloudtrail-logs"
+          ],
+          "score": 0.249
+        }
+      ]
+    },
+    {
+      "run_id": "run_dyn_dyn_seed1496771736_ep0018",
+      "phase": "brute",
+      "window_label": "HIGH",
+      "true_compromised": "mysql-db",
+      "risk_class": "MEDIUM",
+      "probabilities": {
+        "LOW": 0.034,
+        "MEDIUM": 0.598,
+        "HIGH": 0.368
+      },
+      "node_risk": {
+        "api-server": 0.504,
+        "auth-service": 0.613,
+        "payment-service": 0.098,
+        "worker-service": 0.007,
+        "user-docs": 0.027,
+        "kyc-files": 0.087,
+        "audit-logs": 0.142,
+        "backups": 0.147,
+        "db-access-role": 0.012,
+        "lambda-exec-role": 0.011,
+        "readonly-role": 0.003,
+        "payment-role": 0.005,
+        "admin-role": 0.018,
+        "payment-lambda": 0.0,
+        "kyc-lambda": 0.0,
+        "notify-lambda": 0.0,
+        "fintech-api-gateway": 0.003,
+        "tx-queue": 0.018,
+        "notify-queue": 0.018,
+        "mysql-db": 0.966,
+        "redis-cache": 0.001,
+        "waf-firewall": 0.021,
+        "load-balancer": 0.016,
+        "cloudtrail-logs": 0.002,
+        "kms-keys": 0.0
+      },
+      "top_paths": [
+        {
+          "nodes": [
+            "api-server",
+            "auth-service",
+            "mysql-db"
+          ],
+          "score": 0.694
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "mysql-db"
+          ],
+          "score": 0.522
+        },
+        {
+          "nodes": [
+            "auth-service",
+            "db-access-role",
+            "admin-role",
+            "mysql-db"
+          ],
+          "score": 0.402
+        },
+        {
+          "nodes": [
+            "api-server",
+            "auth-service",
+            "db-access-role"
+          ],
+          "score": 0.376
+        },
+        {
+          "nodes": [
+            "api-server",
+            "auth-service",
+            "db-access-role",
+            "admin-role"
+          ],
+          "score": 0.287
+        }
+      ]
+    },
+    {
+      "run_id": "run_dyn_dyn_seed1496771736_ep0021",
+      "phase": "brute",
+      "window_label": "HIGH",
+      "true_compromised": "mysql-db",
+      "risk_class": "MEDIUM",
+      "probabilities": {
+        "LOW": 0.019,
+        "MEDIUM": 0.606,
+        "HIGH": 0.375
+      },
+      "node_risk": {
+        "api-server": 0.17,
+        "auth-service": 0.407,
+        "payment-service": 0.077,
+        "worker-service": 0.003,
+        "user-docs": 0.008,
+        "kyc-files": 0.05,
+        "audit-logs": 0.096,
+        "backups": 0.107,
+        "db-access-role": 0.004,
+        "lambda-exec-role": 0.005,
+        "readonly-role": 0.001,
+        "payment-role": 0.002,
+        "admin-role": 0.009,
+        "payment-lambda": 0.0,
+        "kyc-lambda": 0.0,
+        "notify-lambda": 0.0,
+        "fintech-api-gateway": 0.001,
+        "tx-queue": 0.007,
+        "notify-queue": 0.007,
+        "mysql-db": 0.981,
+        "redis-cache": 0.0,
+        "waf-firewall": 0.01,
+        "load-balancer": 0.007,
+        "cloudtrail-logs": 0.001,
+        "kms-keys": 0.0
+      },
+      "top_paths": [
+        {
+          "nodes": [
+            "api-server",
+            "auth-service",
+            "mysql-db"
+          ],
+          "score": 0.519
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "mysql-db"
+          ],
+          "score": 0.409
+        },
+        {
+          "nodes": [
+            "auth-service",
+            "db-access-role",
+            "admin-role",
+            "mysql-db"
+          ],
+          "score": 0.35
+        },
+        {
+          "nodes": [
+            "api-server",
+            "auth-service",
+            "db-access-role"
+          ],
+          "score": 0.193
+        },
+        {
+          "nodes": [
+            "api-server",
+            "auth-service",
+            "db-access-role",
+            "admin-role"
+          ],
+          "score": 0.147
+        }
+      ]
+    },
+    {
+      "run_id": "run_dyn_dyn_seed1496771736_ep0021",
+      "phase": "exploit",
+      "window_label": "HIGH",
+      "true_compromised": "readonly-role",
+      "risk_class": "HIGH",
+      "probabilities": {
+        "LOW": 0.006,
+        "MEDIUM": 0.327,
+        "HIGH": 0.667
+      },
+      "node_risk": {
+        "api-server": 0.004,
+        "auth-service": 0.0,
+        "payment-service": 0.008,
+        "worker-service": 0.0,
+        "user-docs": 0.001,
+        "kyc-files": 0.001,
+        "audit-logs": 0.0,
+        "backups": 0.001,
+        "db-access-role": 0.001,
+        "lambda-exec-role": 0.0,
+        "readonly-role": 0.994,
+        "payment-role": 0.0,
+        "admin-role": 0.0,
+        "payment-lambda": 0.0,
+        "kyc-lambda": 0.0,
+        "notify-lambda": 0.0,
+        "fintech-api-gateway": 0.0,
+        "tx-queue": 0.001,
+        "notify-queue": 0.001,
+        "mysql-db": 0.0,
+        "redis-cache": 0.0,
+        "waf-firewall": 0.001,
+        "load-balancer": 0.001,
+        "cloudtrail-logs": 0.0,
+        "kms-keys": 0.0
+      },
+      "top_paths": [
+        {
+          "nodes": [
+            "api-server",
+            "readonly-role",
+            "payment-service"
+          ],
+          "score": 0.335
+        },
+        {
+          "nodes": [
+            "readonly-role",
+            "payment-service",
+            "backups"
+          ],
+          "score": 0.334
+        },
+        {
+          "nodes": [
+            "readonly-role",
+            "payment-service",
+            "kyc-files"
+          ],
+          "score": 0.334
+        },
+        {
+          "nodes": [
+            "readonly-role",
+            "payment-service",
+            "mysql-db"
+          ],
+          "score": 0.334
+        },
+        {
+          "nodes": [
+            "readonly-role",
+            "payment-service",
+            "payment-role"
+          ],
+          "score": 0.334
+        }
+      ]
+    },
+    {
+      "run_id": "run_dyn_dyn_seed1496771736_ep0021",
+      "phase": "exfil",
+      "window_label": "HIGH",
+      "true_compromised": "payment-service",
+      "risk_class": "HIGH",
+      "probabilities": {
+        "LOW": 0.003,
+        "MEDIUM": 0.327,
+        "HIGH": 0.669
+      },
+      "node_risk": {
+        "api-server": 0.001,
+        "auth-service": 0.0,
+        "payment-service": 0.997,
+        "worker-service": 0.0,
+        "user-docs": 0.0,
+        "kyc-files": 0.016,
+        "audit-logs": 0.0,
+        "backups": 0.003,
+        "db-access-role": 0.0,
+        "lambda-exec-role": 0.0,
+        "readonly-role": 0.255,
+        "payment-role": 0.055,
+        "admin-role": 0.0,
+        "payment-lambda": 0.0,
+        "kyc-lambda": 0.0,
+        "notify-lambda": 0.0,
+        "fintech-api-gateway": 0.0,
+        "tx-queue": 0.0,
+        "notify-queue": 0.0,
+        "mysql-db": 0.0,
+        "redis-cache": 0.001,
+        "waf-firewall": 0.0,
+        "load-balancer": 0.0,
+        "cloudtrail-logs": 0.0,
+        "kms-keys": 0.0
+      },
+      "top_paths": [
+        {
+          "nodes": [
+            "payment-service",
+            "payment-role",
+            "admin-role"
+          ],
+          "score": 0.351
+        },
+        {
+          "nodes": [
+            "payment-service",
+            "kyc-files",
+            "kyc-lambda"
+          ],
+          "score": 0.337
+        },
+        {
+          "nodes": [
+            "payment-service",
+            "payment-role",
+            "admin-role",
+            "mysql-db"
+          ],
+          "score": 0.263
+        },
+        {
+          "nodes": [
+            "payment-service",
+            "payment-role",
+            "admin-role",
+            "cloudtrail-logs"
+          ],
+          "score": 0.263
+        },
+        {
+          "nodes": [
+            "payment-service",
+            "payment-role",
+            "admin-role",
+            "kms-keys"
+          ],
+          "score": 0.263
+        }
+      ]
+    },
+    {
+      "run_id": "run_dyn_dyn_seed1496771736_ep0006",
+      "phase": "idle",
+      "window_label": "LOW",
+      "true_compromised": null,
+      "risk_class": "LOW",
+      "probabilities": {
+        "LOW": 0.909,
+        "MEDIUM": 0.059,
+        "HIGH": 0.032
+      },
+      "node_risk": {
+        "api-server": 0.071,
+        "auth-service": 0.03,
+        "payment-service": 0.058,
+        "worker-service": 0.019,
+        "user-docs": 0.021,
+        "kyc-files": 0.091,
+        "audit-logs": 0.003,
+        "backups": 0.045,
+        "db-access-role": 0.038,
+        "lambda-exec-role": 0.021,
+        "readonly-role": 0.012,
+        "payment-role": 0.017,
+        "admin-role": 0.01,
+        "payment-lambda": 0.0,
+        "kyc-lambda": 0.0,
+        "notify-lambda": 0.0,
+        "fintech-api-gateway": 0.006,
+        "tx-queue": 0.043,
+        "notify-queue": 0.043,
+        "mysql-db": 0.001,
+        "redis-cache": 0.0,
+        "waf-firewall": 0.038,
+        "load-balancer": 0.029,
+        "cloudtrail-logs": 0.003,
+        "kms-keys": 0.001
+      },
+      "top_paths": [
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "kyc-files"
+          ],
+          "score": 0.073
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "backups"
+          ],
+          "score": 0.058
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "kyc-files",
+            "kyc-lambda"
+          ],
+          "score": 0.055
+        },
+        {
+          "nodes": [
+            "payment-service",
+            "kyc-files",
+            "kyc-lambda"
+          ],
+          "score": 0.05
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "payment-role"
+          ],
+          "score": 0.049
+        }
+      ]
+    },
+    {
+      "run_id": "run_dyn_dyn_seed1496771736_ep0011",
+      "phase": "idle",
+      "window_label": "LOW",
+      "true_compromised": null,
+      "risk_class": "LOW",
+      "probabilities": {
+        "LOW": 0.496,
+        "MEDIUM": 0.329,
+        "HIGH": 0.176
+      },
+      "node_risk": {
+        "api-server": 0.393,
+        "auth-service": 0.14,
+        "payment-service": 0.094,
+        "worker-service": 0.007,
+        "user-docs": 0.342,
+        "kyc-files": 0.073,
+        "audit-logs": 0.043,
+        "backups": 0.07,
+        "db-access-role": 0.012,
+        "lambda-exec-role": 0.007,
+        "readonly-role": 0.003,
+        "payment-role": 0.005,
+        "admin-role": 0.007,
+        "payment-lambda": 0.0,
+        "kyc-lambda": 0.0,
+        "notify-lambda": 0.0,
+        "fintech-api-gateway": 0.002,
+        "tx-queue": 0.013,
+        "notify-queue": 0.013,
+        "mysql-db": 0.504,
+        "redis-cache": 0.0,
+        "waf-firewall": 0.013,
+        "load-balancer": 0.01,
+        "cloudtrail-logs": 0.001,
+        "kms-keys": 0.0
+      },
+      "top_paths": [
+        {
+          "nodes": [
+            "api-server",
+            "auth-service",
+            "mysql-db"
+          ],
+          "score": 0.346
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "mysql-db"
+          ],
+          "score": 0.331
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "kyc-files"
+          ],
+          "score": 0.187
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "backups"
+          ],
+          "score": 0.186
+        },
+        {
+          "nodes": [
+            "api-server",
+            "auth-service",
+            "db-access-role"
+          ],
+          "score": 0.181
+        }
+      ]
+    },
+    {
+      "run_id": "run_dyn_dyn_seed1496771736_ep0021",
+      "phase": "idle",
+      "window_label": "LOW",
+      "true_compromised": null,
+      "risk_class": "LOW",
+      "probabilities": {
+        "LOW": 0.909,
+        "MEDIUM": 0.059,
+        "HIGH": 0.032
+      },
+      "node_risk": {
+        "api-server": 0.071,
+        "auth-service": 0.03,
+        "payment-service": 0.058,
+        "worker-service": 0.019,
+        "user-docs": 0.021,
+        "kyc-files": 0.091,
+        "audit-logs": 0.003,
+        "backups": 0.045,
+        "db-access-role": 0.038,
+        "lambda-exec-role": 0.021,
+        "readonly-role": 0.012,
+        "payment-role": 0.017,
+        "admin-role": 0.01,
+        "payment-lambda": 0.0,
+        "kyc-lambda": 0.0,
+        "notify-lambda": 0.0,
+        "fintech-api-gateway": 0.006,
+        "tx-queue": 0.043,
+        "notify-queue": 0.043,
+        "mysql-db": 0.001,
+        "redis-cache": 0.0,
+        "waf-firewall": 0.038,
+        "load-balancer": 0.029,
+        "cloudtrail-logs": 0.003,
+        "kms-keys": 0.001
+      },
+      "top_paths": [
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "kyc-files"
+          ],
+          "score": 0.073
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "backups"
+          ],
+          "score": 0.058
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "kyc-files",
+            "kyc-lambda"
+          ],
+          "score": 0.055
+        },
+        {
+          "nodes": [
+            "payment-service",
+            "kyc-files",
+            "kyc-lambda"
+          ],
+          "score": 0.05
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "payment-role"
+          ],
+          "score": 0.049
+        }
+      ]
+    },
+    {
+      "run_id": "run_dyn_dyn_seed1496771736_ep0032",
+      "phase": "brute",
+      "window_label": "MEDIUM",
+      "true_compromised": null,
+      "risk_class": "MEDIUM",
+      "probabilities": {
+        "LOW": 0.018,
+        "MEDIUM": 0.593,
+        "HIGH": 0.39
+      },
+      "node_risk": {
+        "api-server": 0.115,
+        "auth-service": 0.742,
+        "payment-service": 0.02,
+        "worker-service": 0.003,
+        "user-docs": 0.051,
+        "kyc-files": 0.024,
+        "audit-logs": 0.012,
+        "backups": 0.026,
+        "db-access-role": 0.017,
+        "lambda-exec-role": 0.004,
+        "readonly-role": 0.002,
+        "payment-role": 0.002,
+        "admin-role": 0.009,
+        "payment-lambda": 0.0,
+        "kyc-lambda": 0.0,
+        "notify-lambda": 0.0,
+        "fintech-api-gateway": 0.001,
+        "tx-queue": 0.008,
+        "notify-queue": 0.008,
+        "mysql-db": 0.982,
+        "redis-cache": 0.0,
+        "waf-firewall": 0.009,
+        "load-balancer": 0.006,
+        "cloudtrail-logs": 0.001,
+        "kms-keys": 0.0
+      },
+      "top_paths": [
+        {
+          "nodes": [
+            "api-server",
+            "auth-service",
+            "mysql-db"
+          ],
+          "score": 0.613
+        },
+        {
+          "nodes": [
+            "auth-service",
+            "db-access-role",
+            "admin-role",
+            "mysql-db"
+          ],
+          "score": 0.438
+        },
+        {
+          "nodes": [
+            "api-server",
+            "payment-service",
+            "mysql-db"
+          ],
+          "score": 0.373
+        },
+        {
+          "nodes": [
+            "api-server",
+            "auth-service",
+            "db-access-role"
+          ],
+          "score": 0.291
+        },
+        {
+          "nodes": [
+            "auth-service",
+            "db-access-role",
+            "admin-role"
+          ],
+          "score": 0.256
+        }
+      ]
+    }
+  ]
+}
