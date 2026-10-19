@@ -3,25 +3,35 @@ import Summary from "./components/Summary";
 import RiskChart from "./components/RiskChart";
 import AttackGraph from "./components/AttackGraph";
 import PathsPanel from "./components/PathsPanel";
+import RiskDashboard from "./risk/RiskDashboard";
+import "./risk/risk.css";
 
-const TABS = [["summary", "Summary"], ["risk", "Risk Chart"], ["graph", "Attack Graph"], ["paths", "Critical Paths"]];
+const TABS = [["live", "Live risk"], ["summary", "Summary"], ["risk", "Risk chart"], ["graph", "Attack graph"], ["paths", "Critical paths"]];
 
 function App() {
-  const [tab, setTab] = useState("summary");
+  const [tab, setTab] = useState("live");
   return (
-    <div style={{ padding: 16, fontFamily: "sans-serif" }}>
-      <h2>Fintech Risk Dashboard</h2>
-      <div style={{ display: "flex", gap: 8, marginBottom: 16 }}>
-        {TABS.map(([id, label]) => (
-          <button key={id} onClick={() => setTab(id)}
-            style={{ padding: "8px 16px", cursor: "pointer", fontWeight: tab === id ? "bold" : "normal",
-              background: tab === id ? "#1976d2" : "#eee", color: tab === id ? "#fff" : "#000", border: "none" }}>
-            {label}</button>))}
-      </div>
-      {tab === "summary" && <Summary />}
-      {tab === "risk" && <RiskChart />}
-      {tab === "graph" && <AttackGraph />}
-      {tab === "paths" && <PathsPanel />}
+    <div>
+      <header className="app-top">
+        <h1>Fintech risk dashboard</h1>
+        <p>Spots attack activity across your cloud services and shows where it could spread.</p>
+        <nav className="tabs">
+          {TABS.map(([id, label]) => (
+            <button key={id} className={"tab" + (tab === id ? " on" : "")} onClick={() => setTab(id)}>{label}</button>
+          ))}
+        </nav>
+      </header>
+      <main className="app-body">
+        {tab === "live" && <RiskDashboard />}
+        {tab !== "live" && (
+          <div className="panel-box">
+            {tab === "summary" && <Summary />}
+            {tab === "risk" && <RiskChart />}
+            {tab === "graph" && <AttackGraph />}
+            {tab === "paths" && <PathsPanel />}
+          </div>
+        )}
+      </main>
     </div>
   );
 }

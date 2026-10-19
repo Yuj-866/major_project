@@ -27,3 +27,8 @@ data/*
 graph_model/checkpoints/
 graph_model/results/
 !graph_model/snapshots/snapshots_dynamic/
+
+.venv-backend/
+replay_data/
+__pycache__/
+*.zip

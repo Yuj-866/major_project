@@ -1,0 +1,15 @@
+{
+  "checkpoint_path": "graph_model/checkpoints/node_risk_node_h0.pt",
+  "snapshot_dir": "replay_data",
+  "seq_len": 3,
+  "horizon": 1,
+  "window_seconds": 300,
+  "model_name": "mock_model",
+  "model_version": "0.1",
+  "cors_origins": [
+    "http://localhost:3000",
+    "http://localhost:5173",
+    "http://127.0.0.1:5500",
+    "http://localhost:8080"
+  ]
+}
