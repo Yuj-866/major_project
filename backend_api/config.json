@@ -1,0 +1,15 @@
+{
+  "checkpoint_path": "graph_model/checkpoints/node_risk_node_h0.pt",
+  "snapshot_dir": "graph_model/snapshots/snapshots_dynamic",
+  "seq_len": 3,
+  "horizon": 0,
+  "window_seconds": 30,
+  "model_name": "node_risk_node_h0",
+  "model_version": "0.1",
+  "cors_origins": [
+    "http://localhost:3000",
+    "http://localhost:5173",
+    "http://127.0.0.1:5500",
+    "http://localhost:8080"
+  ]
+}

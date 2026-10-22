@@ -1,0 +1,13 @@
+{
+  "run_id": "run_yuktha2005c_0008_seed1540073816",
+  "seed": 1540073816,
+  "cycle_windows": 13,
+  "window_sec": 300,
+  "schedule": {
+    "2": "recon",
+    "5": "exploit",
+    "8": "exfil",
+    "9": "exfil",
+    "12": "brute"
+  }
+}
